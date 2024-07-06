@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/lib"
+    android:background="@drawable/library1"
     android:alpha="0.9"
     tools:context=".ManageBooks">
 
@@ -154,7 +154,7 @@
         android:layout_marginStart="236dp"
         android:layout_marginTop="412dp"
         android:background="@color/colorPrimaryDark"
-        android:text="clear"
+        android:text="Clear"
         android:textColor="@android:color/white"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -180,7 +180,7 @@
         android:layout_marginStart="168dp"
         android:layout_marginTop="496dp"
         android:background="@color/colorPrimaryDark"
-        android:text="back"
+        android:text="Back"
         android:textColor="@android:color/white"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"

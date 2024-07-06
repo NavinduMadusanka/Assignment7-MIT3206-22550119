@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:alpha="0.9"
-    android:background="@drawable/home"
+    android:background="@drawable/library"
     tools:context=".MainActivity">
 
     <TextView
@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
         android:backgroundTintMode="src_over"
-        android:text="WELCOME"
+        android:text="WELCOME..!"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="@color/ic_launcher_background"
         android:textSize="34sp"
@@ -30,10 +30,10 @@
     <TextView
         android:id="@+id/textView4"
         android:layout_width="328dp"
-        android:layout_height="65dp"
+        android:layout_height="160dp"
         android:layout_marginTop="140dp"
         android:backgroundTintMode="src_over"
-        android:text="MINI LIBRARY"
+        android:text="LIBRARY Management System"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="#F6FAF9"

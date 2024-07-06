@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/lib"
+    android:background="@drawable/library1"
     android:alpha="0.9"
     tools:context=".MemberLogin">
 

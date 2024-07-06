@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/lib"
+    android:background="@drawable/library1"
     android:alpha="0.9"
     tools:context=".Signup">
 
@@ -139,7 +139,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="148dp"
         android:layout_marginTop="16dp"
-        android:text="SIGNUP"
+        android:text="Singup"
         android:textColor="@color/ic_launcher_background"
         android:textSize="30sp"
         android:textStyle="bold"

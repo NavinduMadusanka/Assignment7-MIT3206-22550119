@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:alpha="0.9"
-    android:background="@drawable/lib"
+    android:background="@drawable/library1"
     tools:context=".Lending">
 
     <TextView
@@ -168,7 +168,7 @@
         android:layout_height="50dp"
         android:layout_marginBottom="28dp"
         android:background="@color/colorPrimaryDark"
-        android:text="clear"
+        android:text="Clear"
         android:textColor="@android:color/white"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/btnback6"
@@ -183,7 +183,7 @@
         android:layout_width="143dp"
         android:layout_height="42dp"
         android:background="@color/colorPrimaryDark"
-        android:text="back"
+        android:text="Back"
         android:textColor="@android:color/white"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
