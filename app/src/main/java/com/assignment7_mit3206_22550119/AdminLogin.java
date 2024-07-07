@@ -42,7 +42,7 @@ public class AdminLogin extends AppCompatActivity {
                 else {
 
                     if (UserName.getText().toString().equals("user") && Password.getText().toString().equals("user123")) {
-                        Toast.makeText(getApplicationContext(), "Succesfully Logged as Admin", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Successfully Logged as Admin", Toast.LENGTH_SHORT).show();
                         Intent libAdmin = new Intent(getApplicationContext(), AdminMenu.class);
                         startActivity(libAdmin);
 
