@@ -24,12 +24,10 @@ public class MemberMenu extends AppCompatActivity {
             }
         });
 
-        button = findViewById(R.id.btnserachbook);
+        button = findViewById(R.id.btnsearchbooks);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                SearchBooks();
-            }
+            public void onClick(View v) { SearchBooks(); }
         });
 
     }
