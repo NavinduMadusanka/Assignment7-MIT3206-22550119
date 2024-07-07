@@ -3,6 +3,7 @@ package com.assignment7_mit3206_22550119;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -70,6 +71,10 @@ public class SearchBooks extends AppCompatActivity {
                         "Publisher: "+cursor.getString(2)+'\n'+
                         "Branch: "+cursor.getString(4));
             }
+
+            // Add logging statement to check if adapter is being populated correctly
+            Log.d("SearchBooks", "viewData(): Adapter populated with " + listItem.size() + " items");
+
             adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,listItem);
             userlist.setAdapter(adapter);
         }
@@ -122,21 +127,6 @@ public class SearchBooks extends AppCompatActivity {
 
     public void DBManager() {
         Intent intent = new Intent(this, DBManager.class);
-        startActivity(intent);
-    }
-
-    public void ManageBooks(){
-        Intent intent = new Intent(this, ManageBooks.class);
-        startActivity(intent);
-    }
-
-    public void ManagePublisher(){
-        Intent intent = new Intent(this, ManagePublisher.class);
-        startActivity(intent);
-    }
-
-    public void ManageBranch(){
-        Intent intent = new Intent(this, ManageBranch.class);
         startActivity(intent);
     }
 

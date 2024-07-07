@@ -98,26 +98,6 @@ public class Lending extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void SearchBooks() {
-        Intent intent = new Intent(this, SearchBooks.class);
-        startActivity(intent);
-    }
-
-    public void ManageBooks() {
-        Intent intent = new Intent(this, ManageBooks.class);
-        startActivity(intent);
-    }
-
-    public void ManagePublisher() {
-        Intent intent = new Intent(this, ManagePublisher.class);
-        startActivity(intent);
-    }
-
-    public void ManageBranch() {
-        Intent intent = new Intent(this, ManageBranch.class);
-        startActivity(intent);
-    }
-
     public void MemberMenu(){
         Intent intent = new Intent(this, MemberMenu.class);
         startActivity(intent);

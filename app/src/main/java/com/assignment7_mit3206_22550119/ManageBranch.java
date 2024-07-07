@@ -85,7 +85,7 @@ public class ManageBranch extends AppCompatActivity {
                 editText3.getText().clear();
 
                 Toast.makeText(getApplicationContext(),
-                        "Your Successfully Deleted", Toast.LENGTH_SHORT).show();
+                        "Successfully Deleted", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -107,21 +107,6 @@ public class ManageBranch extends AppCompatActivity {
 
     public void DBManager() {
         Intent intent = new Intent(this, DBManager.class);
-        startActivity(intent);
-    }
-
-    public void SearchBooks(){
-        Intent intent = new Intent(this, SearchBooks.class);
-        startActivity(intent);
-    }
-
-    public void ManageBooks(){
-        Intent intent = new Intent(this, ManageBooks.class);
-        startActivity(intent);
-    }
-
-    public void ManagePublisher(){
-        Intent intent = new Intent(this, ManagePublisher.class);
         startActivity(intent);
     }
 

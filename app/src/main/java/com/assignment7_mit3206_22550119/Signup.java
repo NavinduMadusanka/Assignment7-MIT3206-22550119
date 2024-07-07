@@ -97,9 +97,4 @@ public class Signup extends AppCompatActivity {
         Intent intent = new Intent(this, DBManager.class);
         startActivity(intent);
     }
-
-    public  void MemberLogin(){
-        Intent intent = new Intent(this, MemberLogin.class);
-        startActivity(intent);
-    }
 }

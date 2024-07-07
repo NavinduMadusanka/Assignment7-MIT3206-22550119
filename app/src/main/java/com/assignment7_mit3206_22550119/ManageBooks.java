@@ -89,7 +89,7 @@ public class ManageBooks extends AppCompatActivity {
                 editText5.getText().clear();
 
                 Toast.makeText(getApplicationContext(),
-                        "Your Successfully Deleted", Toast.LENGTH_SHORT).show();
+                        "Successfully Deleted", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -116,21 +116,6 @@ public class ManageBooks extends AppCompatActivity {
 
     public void Lending() {
         Intent intent = new Intent(this, Lending.class);
-        startActivity(intent);
-    }
-
-    public void ManageBranch() {
-        Intent intent = new Intent(this, ManageBranch.class);
-        startActivity(intent);
-    }
-
-    public void ManagePublisher() {
-        Intent intent = new Intent(this, ManagePublisher.class);
-        startActivity(intent);
-    }
-
-    public void SearchBooks() {
-        Intent intent = new Intent(this, SearchBooks.class);
         startActivity(intent);
     }
 

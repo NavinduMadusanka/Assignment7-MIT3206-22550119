@@ -93,18 +93,8 @@ public class AdminMenu extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void SearchBooks() {
-        Intent intent = new Intent(this, SearchBooks.class);
-        startActivity(intent);
-    }
-
     public void MemberMenu() {
         Intent intent = new Intent(this, MemberMenu.class);
-        startActivity(intent);
-    }
-
-    public void AdminLogin() {
-        Intent intent = new Intent(this, AdminLogin.class);
         startActivity(intent);
     }
 }

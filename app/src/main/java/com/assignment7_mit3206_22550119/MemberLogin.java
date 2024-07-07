@@ -87,11 +87,6 @@ public class MemberLogin extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void Signup(){
-        Intent intent = new Intent(this, Signup.class);
-        startActivity(intent);
-    }
-
     public void MemberMenu(){
         Intent intent = new Intent(this, MemberMenu.class);
         startActivity(intent);
