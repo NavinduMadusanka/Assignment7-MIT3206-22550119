@@ -11,7 +11,7 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="108dp"
+        android:layout_marginStart="100dp"
         android:layout_marginTop="28dp"
         android:text="Admin Menu"
         android:textColor="@color/ic_launcher_background"
@@ -24,7 +24,7 @@
 
     <Button
         android:id="@+id/btnaddingB"
-        android:layout_width="280dp"
+        android:layout_width="270dp"
         android:layout_height="49dp"
         android:layout_marginTop="92dp"
         android:background="@color/colorPrimaryDark"
@@ -40,7 +40,7 @@
 
     <Button
         android:id="@+id/btnmanagepub"
-        android:layout_width="280dp"
+        android:layout_width="270dp"
         android:layout_height="49dp"
         android:layout_marginTop="176dp"
         android:background="@color/colorPrimaryDark"
@@ -56,7 +56,7 @@
 
     <Button
         android:id="@+id/btnbranch"
-        android:layout_width="280dp"
+        android:layout_width="270dp"
         android:layout_height="49dp"
         android:layout_marginTop="244dp"
         android:background="@color/colorPrimaryDark"
@@ -72,7 +72,7 @@
 
     <Button
         android:id="@+id/btnlending"
-        android:layout_width="280dp"
+        android:layout_width="270dp"
         android:layout_height="49dp"
         android:background="@color/colorPrimaryDark"
         android:text="Book Lending"
@@ -89,7 +89,7 @@
         android:id="@+id/btnlogout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="284dp"
+        android:layout_marginStart="250dp"
         android:layout_marginTop="632dp"
         android:background="@color/colorPrimary"
         android:text="Logout"

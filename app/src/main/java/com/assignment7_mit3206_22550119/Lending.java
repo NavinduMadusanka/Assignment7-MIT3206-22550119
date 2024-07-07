@@ -54,7 +54,7 @@ public class Lending extends AppCompatActivity {
                         editText3.getText().toString().isEmpty() || editText4.getText().toString().isEmpty() ||
                         editText5.getText().toString().isEmpty()) {
 
-                    Toast.makeText(getApplicationContext(), "Fields can't be null", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Fields can't be Null", Toast.LENGTH_SHORT).show();
                     valid = false;
                 }
                 if(valid) {

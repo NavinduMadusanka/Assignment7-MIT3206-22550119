@@ -51,7 +51,7 @@ public class ManagePublisher extends AppCompatActivity {
                 if (editText1.getText().toString().isEmpty() || editText2.getText().toString().isEmpty()||
                         editText3.getText().toString().isEmpty()) {
 
-                    Toast.makeText(getApplicationContext(), "Fields can't be null", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Fields can't be Null", Toast.LENGTH_SHORT).show();
                     valid = false;
                 }
                 if(valid) {

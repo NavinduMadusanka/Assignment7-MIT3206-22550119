@@ -10,7 +10,7 @@ import androidx.annotation.Nullable;
 
 public class DatabaseHelper extends SQLiteOpenHelper{
 
-    public static final String DATABASE_NAME="librarysystem";
+    public static final String DATABASE_NAME="librarySystem";
 
     public static final String TABLE_NAME="Member";
     //public static final String COL = "CardNo";
@@ -56,13 +56,13 @@ public class DatabaseHelper extends SQLiteOpenHelper{
 
     public DatabaseHelper (@Nullable Context context){
         super (context, DATABASE_NAME,null,1);
-        Log.e("first","opendatabase");
+        Log.e("first","OpenDatabase");
 
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        Log.e("Test2","oncreate table");
+        Log.e("Test2","OnCreate Table");
         //db.execSQL(CREATE_TABLE);
         db.execSQL("CREATE TABLE "
                 + TABLE_NAME

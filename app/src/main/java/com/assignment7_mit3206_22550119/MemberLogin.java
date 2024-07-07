@@ -42,7 +42,7 @@ public class MemberLogin extends AppCompatActivity {
             public void onClick(View v) {
                 if (UserName.getText().toString().isEmpty() || Password.getText().toString().isEmpty()) {
 
-                    Toast.makeText(getApplicationContext(), "Fields can't be null", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Fields can't be Null", Toast.LENGTH_SHORT).show();
                 }
                 else
                 {
@@ -55,7 +55,7 @@ public class MemberLogin extends AppCompatActivity {
 
                         if (cursor.moveToNext()) {
 
-                            Toast.makeText(MemberLogin.this, "Successfully logged", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MemberLogin.this, "Successfully Logged", Toast.LENGTH_SHORT).show();
                             Intent Member = new Intent(getApplicationContext(), MemberMenu.class);
                             startActivity(Member);
                         }

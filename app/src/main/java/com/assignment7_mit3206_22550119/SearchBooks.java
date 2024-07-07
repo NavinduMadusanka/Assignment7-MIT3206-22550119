@@ -60,7 +60,7 @@ public class SearchBooks extends AppCompatActivity {
         Cursor cursor = db.viewData();
 
         if(cursor.getCount() == 0){
-            Toast.makeText(this, "NO DATA TO SHOW", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Not Data to Show", Toast.LENGTH_SHORT).show();
         }else{
             while(cursor.moveToNext()){
                 listItem.add(//"Book ID: "+ cursor.getString(0)+'\n' +
