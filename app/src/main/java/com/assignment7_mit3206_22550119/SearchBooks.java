@@ -63,11 +63,12 @@ public class SearchBooks extends AppCompatActivity {
             Toast.makeText(this, "Not Data to Show", Toast.LENGTH_SHORT).show();
         }else{
             while(cursor.moveToNext()){
-                listItem.add(//"Book ID: "+ cursor.getString(0)+'\n' +
+                listItem.add(
+                        "Book ID: "+ cursor.getString(0)+'\n' +
                         "Book Name: "+ cursor.getString(1)+'\n' +
-                                "Author: "+cursor.getString(3)+'\n'+
-                                //"Publisher: "+cursor.getString(2)+'\n'+
-                                "Branch: "+cursor.getString(4));
+                        "Author: "+cursor.getString(3)+'\n'+
+                        "Publisher: "+cursor.getString(2)+'\n'+
+                        "Branch: "+cursor.getString(4));
             }
             adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,listItem);
             userlist.setAdapter(adapter);
