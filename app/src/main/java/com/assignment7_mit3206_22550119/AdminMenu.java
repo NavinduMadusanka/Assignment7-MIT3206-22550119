@@ -51,33 +51,60 @@ public class AdminMenu extends AppCompatActivity {
         lendingBtn = findViewById(R.id.btnlending);
         lendingBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) { Lending(); }
+            public void onClick(View v) {
+                Lending();
+            }
         });
 
     }
 
-    public void ManageBooks(){
+    public void ManageBooks() {
         Intent intent = new Intent(this, ManageBooks.class);
         startActivity(intent);
     }
 
-    public void ManagePublisher(){
+    public void ManagePublisher() {
         Intent intent = new Intent(this, ManagePublisher.class);
         startActivity(intent);
     }
 
-    public void ManageBranch(){
+    public void ManageBranch() {
         Intent intent = new Intent(this, ManageBranch.class);
         startActivity(intent);
     }
 
-    public void Lending(){
+    public void Lending() {
         Intent intent = new Intent(this, Lending.class);
         startActivity(intent);
     }
 
-    public void MainActivity(){
+    public void MainActivity() {
         Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void DatabaseHelper() {
+        Intent intent = new Intent(this, DatabaseHelper.class);
+        startActivity(intent);
+    }
+
+    public void DBManager() {
+        Intent intent = new Intent(this, DBManager.class);
+        startActivity(intent);
+    }
+
+    public void SearchBooks() {
+        Intent intent = new Intent(this, SearchBooks.class);
+        startActivity(intent);
+    }
+
+    public void MemberMenu() {
+        Intent intent = new Intent(this, MemberMenu.class);
+        startActivity(intent);
+    }
+
+    public void AdminLogin() {
+        Intent intent = new Intent(this, AdminLogin.class);
         startActivity(intent);
     }
 }

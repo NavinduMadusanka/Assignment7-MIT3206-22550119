@@ -15,7 +15,7 @@ public class ManageBooks extends AppCompatActivity {
     Button button;
     private DBManager dbManager;
 
-    EditText editText1, editText2, editText3,editText4,editText5;
+    EditText editText1, editText2, editText3, editText4, editText5;
     Button addbook;
     Button clear;
 
@@ -32,14 +32,14 @@ public class ManageBooks extends AppCompatActivity {
             }
         });
 
-        dbManager= new DBManager(this);
+        dbManager = new DBManager(this);
 
         dbManager.open();
 
         addbook = findViewById(R.id.btnbookadd);
-        clear =  findViewById(R.id.btndelete);
-        editText1 =  findViewById(R.id.txtBookID);
-        editText2 =  findViewById(R.id.txtBooktitle);
+        clear = findViewById(R.id.btndelete);
+        editText1 = findViewById(R.id.txtBookID);
+        editText2 = findViewById(R.id.txtBooktitle);
         editText3 = findViewById(R.id.txtpublishername);
         editText4 = findViewById(R.id.txtauthorname2);
         editText5 = findViewById(R.id.txtaddbranchname);
@@ -50,14 +50,14 @@ public class ManageBooks extends AppCompatActivity {
 
                 boolean valid = true;
 
-                if (editText1.getText().toString().isEmpty() || editText2.getText().toString().isEmpty()||
-                        editText3.getText().toString().isEmpty()||editText4.getText().toString().isEmpty()||
+                if (editText1.getText().toString().isEmpty() || editText2.getText().toString().isEmpty() ||
+                        editText3.getText().toString().isEmpty() || editText4.getText().toString().isEmpty() ||
                         editText5.getText().toString().isEmpty()) {
 
                     Toast.makeText(getApplicationContext(), "Fields can't be Null", Toast.LENGTH_SHORT).show();
                     valid = false;
                 }
-                if(valid) {
+                if (valid) {
 
                     String BookID = editText1.getText().toString();
                     String BookName = editText2.getText().toString();
@@ -69,12 +69,9 @@ public class ManageBooks extends AppCompatActivity {
                     dbManager.insert("insert into Book values('" + BookID + "','" + BookName + "'," +
                             "'" + BookPublisher + "','" + BookAuthor + "','" + Branch + "')");
                     Toast.makeText(getApplicationContext(), "Successfully Inserted", Toast.LENGTH_SHORT).show();
-                    Log.e("first","Inserted");
+                    Log.e("first", "Inserted");
                     dbManager.close();
-                }
-
-                else
-                {
+                } else {
                     Toast.makeText(getApplicationContext(), "Error in Book Adding", Toast.LENGTH_SHORT).show();
                 }
 
@@ -97,8 +94,48 @@ public class ManageBooks extends AppCompatActivity {
         });
     }
 
-    public void AdminMenu(){
+    public void AdminMenu() {
         Intent intent = new Intent(this, AdminMenu.class);
+        startActivity(intent);
+    }
+
+    public void MainActivity() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void DatabaseHelper() {
+        Intent intent = new Intent(this, DatabaseHelper.class);
+        startActivity(intent);
+    }
+
+    public void DBManager() {
+        Intent intent = new Intent(this, DBManager.class);
+        startActivity(intent);
+    }
+
+    public void Lending() {
+        Intent intent = new Intent(this, Lending.class);
+        startActivity(intent);
+    }
+
+    public void ManageBranch() {
+        Intent intent = new Intent(this, ManageBranch.class);
+        startActivity(intent);
+    }
+
+    public void ManagePublisher() {
+        Intent intent = new Intent(this, ManagePublisher.class);
+        startActivity(intent);
+    }
+
+    public void SearchBooks() {
+        Intent intent = new Intent(this, SearchBooks.class);
+        startActivity(intent);
+    }
+
+    public void MemberMenu(){
+        Intent intent = new Intent(this, MemberMenu.class);
         startActivity(intent);
     }
 }

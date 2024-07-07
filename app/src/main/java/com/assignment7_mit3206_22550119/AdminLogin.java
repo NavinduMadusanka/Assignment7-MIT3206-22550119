@@ -61,4 +61,19 @@ public class AdminLogin extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
+
+    public void DatabaseHelper() {
+        Intent intent = new Intent(this, DatabaseHelper.class);
+        startActivity(intent);
+    }
+
+    public void DBManager() {
+        Intent intent = new Intent(this, DBManager.class);
+        startActivity(intent);
+    }
+
+    public void AdminMenu(){
+        Intent intent = new Intent(this, AdminMenu.class);
+        startActivity(intent);
+    }
 }

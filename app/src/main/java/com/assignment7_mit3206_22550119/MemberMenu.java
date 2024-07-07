@@ -41,4 +41,44 @@ public class MemberMenu extends AppCompatActivity {
         Intent intent = new Intent(this, SearchBooks.class);
         startActivity(intent);
     }
+
+    public void DatabaseHelper() {
+        Intent intent = new Intent(this, DatabaseHelper.class);
+        startActivity(intent);
+    }
+
+    public void DBManager() {
+        Intent intent = new Intent(this, DBManager.class);
+        startActivity(intent);
+    }
+
+    public void ManageBooks(){
+        Intent intent = new Intent(this, ManageBooks.class);
+        startActivity(intent);
+    }
+
+    public void ManagePublisher(){
+        Intent intent = new Intent(this, ManagePublisher.class);
+        startActivity(intent);
+    }
+
+    public void ManageBranch(){
+        Intent intent = new Intent(this, ManageBranch.class);
+        startActivity(intent);
+    }
+
+    public void Lending(){
+        Intent intent = new Intent(this, Lending.class);
+        startActivity(intent);
+    }
+
+    public void AdminMenu(){
+        Intent intent = new Intent(this, AdminMenu.class);
+        startActivity(intent);
+    }
+
+    public void MemberLogin(){
+        Intent intent = new Intent(this, MemberLogin.class);
+        startActivity(intent);
+    }
 }

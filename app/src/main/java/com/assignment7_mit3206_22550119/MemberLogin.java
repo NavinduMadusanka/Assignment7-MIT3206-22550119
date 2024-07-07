@@ -76,4 +76,24 @@ public class MemberLogin extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
+
+    public void DatabaseHelper() {
+        Intent intent = new Intent(this, DatabaseHelper.class);
+        startActivity(intent);
+    }
+
+    public void DBManager() {
+        Intent intent = new Intent(this, DBManager.class);
+        startActivity(intent);
+    }
+
+    public void Signup(){
+        Intent intent = new Intent(this, Signup.class);
+        startActivity(intent);
+    }
+
+    public void MemberMenu(){
+        Intent intent = new Intent(this, MemberMenu.class);
+        startActivity(intent);
+    }
 }

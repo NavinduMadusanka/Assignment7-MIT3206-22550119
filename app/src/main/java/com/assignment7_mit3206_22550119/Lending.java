@@ -15,7 +15,7 @@ public class Lending extends AppCompatActivity {
     Button button;
     private DBManager dbManager;
 
-    EditText editText1, editText2, editText3, editText4,editText5;
+    EditText editText1, editText2, editText3, editText4, editText5;
     Button addLendingBook;
     Button clearLendingBook;
 
@@ -32,14 +32,14 @@ public class Lending extends AppCompatActivity {
             }
         });
 
-        dbManager= new DBManager(this);
+        dbManager = new DBManager(this);
 
         dbManager.open();
 
         addLendingBook = findViewById(R.id.btnAddLend);
-        clearLendingBook =  findViewById(R.id.btnDeleteLend);
-        editText1 =  findViewById(R.id.txtBranchIDBook);
-        editText2 =  findViewById(R.id.txtCardNoBook);
+        clearLendingBook = findViewById(R.id.btnDeleteLend);
+        editText1 = findViewById(R.id.txtBranchIDBook);
+        editText2 = findViewById(R.id.txtCardNoBook);
         editText3 = findViewById(R.id.txtDateout);
         editText4 = findViewById(R.id.txtDaeDue);
         editText5 = findViewById(R.id.txtDateReturn);
@@ -50,14 +50,14 @@ public class Lending extends AppCompatActivity {
 
                 boolean valid = true;
 
-                if (editText1.getText().toString().isEmpty() || editText2.getText().toString().isEmpty()||
+                if (editText1.getText().toString().isEmpty() || editText2.getText().toString().isEmpty() ||
                         editText3.getText().toString().isEmpty() || editText4.getText().toString().isEmpty() ||
                         editText5.getText().toString().isEmpty()) {
 
                     Toast.makeText(getApplicationContext(), "Fields can't be Null", Toast.LENGTH_SHORT).show();
                     valid = false;
                 }
-                if(valid) {
+                if (valid) {
 
                     String BranchID = editText1.getText().toString();
                     String CardNo = editText2.getText().toString();
@@ -68,12 +68,9 @@ public class Lending extends AppCompatActivity {
                     dbManager.insert("insert into BookLoan values(?,'" + BranchID + "','" + CardNo + "'," +
                             "'" + DateOut + "','" + DateDue + "','" + DateReturned + "')");
                     Toast.makeText(getApplicationContext(), "Successfully Inserted", Toast.LENGTH_SHORT).show();
-                    Log.e("first","Inserted");
+                    Log.e("first", "Inserted");
                     dbManager.close();
-                }
-
-                else
-                {
+                } else {
                     Toast.makeText(getApplicationContext(), "Error in Branch Adding", Toast.LENGTH_SHORT).show();
                 }
 
@@ -81,8 +78,48 @@ public class Lending extends AppCompatActivity {
         });
     }
 
-    public void AdminMenu(){
+    public void AdminMenu() {
         Intent intent = new Intent(this, AdminMenu.class);
+        startActivity(intent);
+    }
+
+    public void MainActivity() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void DatabaseHelper() {
+        Intent intent = new Intent(this, DatabaseHelper.class);
+        startActivity(intent);
+    }
+
+    public void DBManager() {
+        Intent intent = new Intent(this, DBManager.class);
+        startActivity(intent);
+    }
+
+    public void SearchBooks() {
+        Intent intent = new Intent(this, SearchBooks.class);
+        startActivity(intent);
+    }
+
+    public void ManageBooks() {
+        Intent intent = new Intent(this, ManageBooks.class);
+        startActivity(intent);
+    }
+
+    public void ManagePublisher() {
+        Intent intent = new Intent(this, ManagePublisher.class);
+        startActivity(intent);
+    }
+
+    public void ManageBranch() {
+        Intent intent = new Intent(this, ManageBranch.class);
+        startActivity(intent);
+    }
+
+    public void MemberMenu(){
+        Intent intent = new Intent(this, MemberMenu.class);
         startActivity(intent);
     }
 }
