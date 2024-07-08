@@ -22,7 +22,7 @@ import java.util.ArrayList;
 
 public class SearchBooks extends AppCompatActivity {
 
-    private DBManager dbmanager;
+    private DBManager dbManager;
     DatabaseHelper db;
 
     ListView userlist;
@@ -39,9 +39,10 @@ public class SearchBooks extends AppCompatActivity {
         actionBar.setTitle("Search Books");
 
         db = new DatabaseHelper(this);
+        viewData();
         listItem = new ArrayList<>();
 
-        dbmanager = new DBManager(this);
+        dbManager = new DBManager(this);
 
         userlist = findViewById(R.id.users_list);
         viewData();
