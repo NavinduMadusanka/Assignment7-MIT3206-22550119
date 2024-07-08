@@ -56,9 +56,4 @@ public class MemberMenu extends AppCompatActivity {
         Intent intent = new Intent(this, Lending.class);
         startActivity(intent);
     }
-
-    public void AdminMenu(){
-        Intent intent = new Intent(this, AdminMenu.class);
-        startActivity(intent);
-    }
 }

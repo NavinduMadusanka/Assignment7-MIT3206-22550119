@@ -3,138 +3,116 @@ package com.assignment7_mit3206_22550119;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.SearchView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.MenuItemCompat;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class SearchBooks extends AppCompatActivity {
 
+    private ListView listView;
+    private EditText searchEditText;
+    private Button backButton;
+    private Button searchButton;
+    private Button refreshButton;
     private DBManager dbManager;
-    DatabaseHelper db;
-
-    ListView userlist;
-
-    ArrayList<String> listItem;
-    ArrayAdapter adapter;
+    private List<String> bookList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_books);
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("Search Books");
-
-        db = new DatabaseHelper(this);
-        viewData();
-        listItem = new ArrayList<>();
+        listView = findViewById(R.id.listView);
+        searchEditText = findViewById(R.id.searchEditText);
+        backButton = findViewById(R.id.backButton);
+        searchButton = findViewById(R.id.searchButton);
 
         dbManager = new DBManager(this);
+        dbManager.open();
 
-        userlist = findViewById(R.id.users_list);
-        viewData();
-        userlist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        bookList = new ArrayList<>();
+        Cursor cursor = dbManager.Select("SELECT * FROM Book");
+        if (cursor.moveToFirst()) {
+            do {
+                bookList.add("Book ID : " + cursor.getString(0) +'\n'+ "Book Name : " + cursor.getString(1) +'\n' + "Author : " + cursor.getString(2) +'\n' + "Publisher : " + cursor.getString(3) +'\n' + "Branch : " + cursor.getString(4));
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, bookList);
+        listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String text = userlist.getItemAtPosition(position).toString();
-                Intent intent = new Intent(SearchBooks.this, SearchBooks.class);
-                startActivity(intent);
-                Toast.makeText(SearchBooks.this, ""+text, Toast.LENGTH_SHORT).show();
+                String bookInfo = bookList.get(position);
+                Toast.makeText(SearchBooks.this, "You Selected: " + bookInfo, Toast.LENGTH_SHORT).show();
             }
         });
 
-    }
-
-    private void viewData() {
-        Cursor cursor = db.viewData();
-
-        if(cursor.getCount() == 0){
-            Toast.makeText(this, "Not Data to Show", Toast.LENGTH_SHORT).show();
-        }else{
-            while(cursor.moveToNext()){
-                listItem.add("Book ID: "+ cursor.getString(0)+'\n' +
-                        "Book Name: "+ cursor.getString(1)+'\n' +
-                        "Author: "+cursor.getString(3)+'\n'+
-                        "Publisher: "+cursor.getString(2)+'\n'+
-                        "Branch: "+cursor.getString(4));
-            }
-            // Add logging statement to check if adapter is being populated correctly
-            Log.d("SearchBooks", "viewData(): Adapter populated with " + listItem.size() + " items");
-            adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,listItem);
-            userlist.setAdapter(adapter);
-        }
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate (R.menu.menu, menu);
-        MenuItem searchItem = menu.findItem(R.id.action_search);
-        SearchView searchView =(SearchView) MenuItemCompat.getActionView(searchItem);
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+        searchEditText.setOnKeyListener(new View.OnKeyListener() {
             @Override
-            public boolean onQueryTextSubmit(String query) {
+            public boolean onKey(View v, int keyCode, android.view.KeyEvent event) {
+                if ((event.getAction() == android.view.KeyEvent.ACTION_DOWN) &&
+                        (keyCode == android.view.KeyEvent.KEYCODE_ENTER)) {
+                    searchBooks();
+                    return true;
+                }
                 return false;
             }
+        });
 
+        searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onQueryTextChange(String newText) {
-                ArrayList<String> userslist = new ArrayList<>();
-                for(String user: listItem){
-                    if(user.toLowerCase().contains(newText.toLowerCase())){
-                        userslist.add(user);
-                    }
-                }
-                ArrayAdapter<String> adapter = new ArrayAdapter<String>(SearchBooks.this,
-                        android.R.layout.simple_expandable_list_item_1,userslist);
-                userlist.setAdapter(adapter);
-                return true;
+            public void onClick(View v) {
+                searchBooks();
             }
         });
 
-        return super.onCreateOptionsMenu(menu);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MemberMenu();
+            }
+        });
+
+        refreshButton = findViewById(R.id.refreshButton);
+        refreshButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                searchEditText.setText(" ");
+                bookList.clear();
+                searchBooks();
+            }
+        });
     }
 
-    public void MemberMenu(){
+    private void searchBooks() {
+        String searchQuery = searchEditText.getText().toString();
+        bookList.clear();
+        Cursor cursor = dbManager.Select("SELECT * FROM Book WHERE BookName LIKE '%" + searchQuery + "%' OR BookAuthor LIKE '%" + searchQuery + "%'");
+        if (cursor.moveToFirst()) {
+            do {
+                bookList.add(cursor.getString(1) + " - " + cursor.getString(2));
+            } while (cursor.moveToNext());
+        } else {
+            Toast.makeText(SearchBooks.this, "Book not Found", Toast.LENGTH_SHORT).show();
+        }
+        cursor.close();
+        listView.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, bookList));
+    }
+
+    public void MemberMenu() {
         Intent intent = new Intent(this, MemberMenu.class);
-        startActivity(intent);
-    }
-
-    public void MainActivity(){
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-    }
-
-    public void DatabaseHelper() {
-        Intent intent = new Intent(this, DatabaseHelper.class);
-        startActivity(intent);
-    }
-
-    public void DBManager() {
-        Intent intent = new Intent(this, DBManager.class);
-        startActivity(intent);
-    }
-
-    public void Lending(){
-        Intent intent = new Intent(this, Lending.class);
-        startActivity(intent);
-    }
-
-    public void AdminMenu(){
-        Intent intent = new Intent(this, AdminMenu.class);
         startActivity(intent);
     }
 }

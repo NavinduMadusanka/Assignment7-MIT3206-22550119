@@ -33,6 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="156dp"
+        android:textStyle="bold"
         android:text="Username"
         android:textColor="@color/ic_launcher_background"
         android:backgroundTintMode="src_over"
@@ -46,6 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="296dp"
+        android:textStyle="bold"
         android:text="Password"
         android:textColor="@color/ic_launcher_background"
         android:textSize="24sp"
@@ -60,10 +62,10 @@
         android:layout_marginTop="200dp"
         android:backgroundTint="#ECE6E6"
         android:cursorVisible="false"
+        android:textStyle="bold"
         android:ems="10"
         android:inputType="textPersonName"
         android:textColor="#F4F0F0"
-        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
