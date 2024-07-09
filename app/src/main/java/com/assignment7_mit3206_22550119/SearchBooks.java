@@ -103,7 +103,7 @@ public class SearchBooks extends AppCompatActivity {
             Toast.makeText(SearchBooks.this, "Book Not Found", Toast.LENGTH_SHORT).show();
         }else{
             while (cursor.moveToNext()){
-                bookList.add("Book ID : " + cursor.getString(0) +'\n'+ "Book Name : " + cursor.getString(1) +'\n'+ "Author : " + cursor.getString(2) +'\n'+ "Publisher : " + cursor.getString(3) +'\n'+ "Branch : " + cursor.getString(4) +'\n');
+                bookList.add("Book ID : " + cursor.getString(0) +'\n'+ "Book Name : " + cursor.getString(1) +'\n'+ "Author : " + cursor.getString(2) +'\n'+ "Publisher : " + cursor.getString(3) +'\n'+ "Branch : " + cursor.getString(4));
             }
         }
         cursor.close();
