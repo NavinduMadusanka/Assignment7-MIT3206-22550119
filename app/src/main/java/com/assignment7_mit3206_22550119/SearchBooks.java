@@ -55,7 +55,7 @@ public class SearchBooks extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String bookInfo = bookList.get(position);
-                Toast.makeText(SearchBooks.this, "You Selected: " + bookInfo, Toast.LENGTH_SHORT).show();
+                Toast.makeText(SearchBooks.this, "You had Selected this Book: " + bookInfo, Toast.LENGTH_SHORT).show();
             }
         });
 
