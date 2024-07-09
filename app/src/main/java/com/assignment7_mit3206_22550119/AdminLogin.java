@@ -77,11 +77,6 @@ public class AdminLogin extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void AdminMenu(){
-        Intent intent = new Intent(this, AdminMenu.class);
-        startActivity(intent);
-    }
-
     public void Lending(){
         Intent intent = new Intent(this, Lending.class);
         startActivity(intent);
