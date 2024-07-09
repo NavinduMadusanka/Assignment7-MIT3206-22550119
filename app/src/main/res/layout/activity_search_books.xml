@@ -53,7 +53,7 @@
         android:id="@+id/listView"
         android:textStyle="bold"
         android:divider="#CCCCCC"
-        android:dividerHeight="8px"
+        android:dividerHeight="9px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
