@@ -35,6 +35,7 @@ public class SearchBooks extends AppCompatActivity {
         searchEditText = findViewById(R.id.searchEditText);
         backButton = findViewById(R.id.backButton);
         searchButton = findViewById(R.id.searchButton);
+        refreshButton = findViewById(R.id.refreshButton);
 
         dbManager = new DBManager(this);
         dbManager.open();
@@ -71,6 +72,11 @@ public class SearchBooks extends AppCompatActivity {
             }
         });
 
+        refreshButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { searchBooks(); }
+        });
+
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,12 +89,6 @@ public class SearchBooks extends AppCompatActivity {
             public void onClick(View v) {
                 MemberMenu();
             }
-        });
-
-        refreshButton = findViewById(R.id.refreshButton);
-        refreshButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) { searchBooks(); }
         });
     }
 
