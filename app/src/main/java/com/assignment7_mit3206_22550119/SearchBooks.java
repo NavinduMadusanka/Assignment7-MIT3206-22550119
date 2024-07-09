@@ -115,4 +115,24 @@ public class SearchBooks extends AppCompatActivity {
         Intent intent = new Intent(this, MemberMenu.class);
         startActivity(intent);
     }
+
+    public void DatabaseHelper() {
+        Intent intent = new Intent(this, DatabaseHelper.class);
+        startActivity(intent);
+    }
+
+    public void DBManager() {
+        Intent intent = new Intent(this, DBManager.class);
+        startActivity(intent);
+    }
+
+    public void Lending(){
+        Intent intent = new Intent(this, Lending.class);
+        startActivity(intent);
+    }
+
+    public void MainActivity() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 }
