@@ -73,12 +73,16 @@ public class SearchBooks extends AppCompatActivity {
 
         refreshButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) { searchBooks(); }
+            public void onClick(View v) {
+                searchEditText.clearComposingText();
+                searchBooks();
+            }
         });
 
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                searchEditText.getText();
                 searchBooks();
             }
         });
