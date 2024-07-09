@@ -98,7 +98,7 @@ public class SearchBooks extends AppCompatActivity {
         Cursor cursor = dbManager.Select("SELECT * FROM Book WHERE BookID LIKE '%" + searchQuery + "%' OR BookName LIKE '%" + searchQuery + "%' OR BookAuthor LIKE '%" + searchQuery + "%' OR BookPublisher LIKE '%" + searchQuery + "%' OR BookBranch LIKE '%" + searchQuery);
         if (cursor.moveToFirst()) {
             do {
-                bookList.add(cursor.getString(1) + " - " + cursor.getString(2));
+                bookList.add(cursor.getString(1) + " - " + cursor.getString(2) + " - " + cursor.getString(3) + " - " + cursor.getString(4) + " - " + cursor.getString(5));
             } while (cursor.moveToNext());
         } else {
             Toast.makeText(SearchBooks.this, "Book not Found", Toast.LENGTH_SHORT).show();
