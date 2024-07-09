@@ -95,7 +95,7 @@ public class SearchBooks extends AppCompatActivity {
     private void searchBooks() {
         String searchQuery = searchEditText.getText().toString();
         bookList.clear();
-        Cursor cursor = dbManager.Select("SELECT * FROM Book WHERE BookName LIKE '%" + searchQuery + "%' OR BookAuthor LIKE '%" + searchQuery + "%'");
+        Cursor cursor = dbManager.Select("SELECT * FROM Book WHERE BookID LIKE '%" + searchQuery + "%' OR BookName LIKE '%" + searchQuery + "%' OR BookAuthor LIKE '%" + searchQuery + "%' OR BookPublisher LIKE '%" + searchQuery + "%' OR BookBranch LIKE '%" + searchQuery);
         if (cursor.moveToFirst()) {
             do {
                 bookList.add(cursor.getString(1) + " - " + cursor.getString(2));
