@@ -38,7 +38,7 @@
             android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             android:text="Back" />
 
         <Button
@@ -46,13 +46,15 @@
             android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             android:text="Refresh" />
     </LinearLayout>
 
     <ListView
         android:id="@+id/listView"
         android:textStyle="bold"
+        android:divider="#CCCCCC"
+        android:dividerHeight="10px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
