@@ -40,21 +40,17 @@ public class AdminLogin extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Fields can't be Null", Toast.LENGTH_SHORT).show();
                 }
                 else {
-
                     if (UserName.getText().toString().equals("user") && Password.getText().toString().equals("user123")) {
                         Toast.makeText(getApplicationContext(), "Successfully Logged as Admin", Toast.LENGTH_SHORT).show();
                         Intent libAdmin = new Intent(getApplicationContext(), AdminMenu.class);
                         startActivity(libAdmin);
-
                     }
                     else {
                         Toast.makeText(getApplicationContext(), "Invalid Login", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
-
         });
-
     }
 
     public void MainActivity(){

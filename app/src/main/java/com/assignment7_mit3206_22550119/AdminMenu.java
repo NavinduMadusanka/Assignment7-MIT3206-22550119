@@ -55,7 +55,6 @@ public class AdminMenu extends AppCompatActivity {
                 Lending();
             }
         });
-
     }
 
     public void ManageBooks() {

@@ -36,7 +36,6 @@ public class MemberLogin extends AppCompatActivity {
         Password = findViewById(R.id.txtpass2);
         login = findViewById(R.id.login2);
 
-
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,9 +51,7 @@ public class MemberLogin extends AppCompatActivity {
                     {
                         Cursor cursor = dbManager.Select("select * from Member where UserName='" + UserName.getText() +
                                 "' AND Password='" + Password.getText() + "'");
-
                         if (cursor.moveToNext()) {
-
                             Toast.makeText(MemberLogin.this, "Successfully Logged", Toast.LENGTH_SHORT).show();
                             Intent Member = new Intent(getApplicationContext(), MemberMenu.class);
                             startActivity(Member);
@@ -63,13 +60,10 @@ public class MemberLogin extends AppCompatActivity {
                         {
                             Toast.makeText(getApplicationContext(), "Invalid Login", Toast.LENGTH_SHORT).show();
                         }
-
                     }
                 }
             }
-
         });
-
     }
 
     public void MainActivity(){

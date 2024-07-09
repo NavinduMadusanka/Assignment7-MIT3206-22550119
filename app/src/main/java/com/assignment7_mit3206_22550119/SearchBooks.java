@@ -48,7 +48,6 @@ public class SearchBooks extends AppCompatActivity {
             } while (cursor.moveToNext());
         }
         cursor.close();
-
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, bookList);
         listView.setAdapter(adapter);
 
@@ -96,15 +95,16 @@ public class SearchBooks extends AppCompatActivity {
         String searchQuery = searchEditText.getText().toString();
         bookList.clear();
         Cursor cursor = dbManager.Select("SELECT * FROM Book WHERE BookID LIKE '%" + searchQuery + "%' OR BookName LIKE '%" + searchQuery + "%' OR BookAuthor LIKE '%" + searchQuery + "%' OR BookPublisher LIKE '%" + searchQuery + "%' OR BookBranch LIKE '%" + searchQuery);
-        if (cursor.moveToFirst()) {
-            do {
-                bookList.add(cursor.getString(1) + " - " + cursor.getString(2) + " - " + cursor.getString(3) + " - " + cursor.getString(4) + " - " + cursor.getString(5));
-            } while (cursor.moveToNext());
-        } else {
-            Toast.makeText(SearchBooks.this, "Book not Found", Toast.LENGTH_SHORT).show();
+        if(cursor.getCount() == 0){
+            Toast.makeText(SearchBooks.this, "Book Not Found", Toast.LENGTH_SHORT).show();
+        }else{
+            while (cursor.moveToNext()){
+                bookList.add(cursor.getString(0) + " - " + cursor.getString(1) + " - " + cursor.getString(2) + " - " + cursor.getString(3) + " - " + cursor.getString(4));
+            }
         }
         cursor.close();
-        listView.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, bookList));
+        ArrayAdapter<String> adapter = (ArrayAdapter<String>) listView.getAdapter();
+        adapter.notifyDataSetChanged();
     }
 
     public void MemberMenu() {

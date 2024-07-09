@@ -29,7 +29,6 @@ public class MemberMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) { SearchBooks(); }
         });
-
     }
 
     public void MainActivity(){
