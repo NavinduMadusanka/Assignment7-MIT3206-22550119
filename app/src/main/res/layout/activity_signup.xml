@@ -211,7 +211,6 @@
         android:textStyle="bold"
         android:backgroundTint="@color/ic_launcher_background"
         android:ems="10"
-        android:inputType="textPassword"
         android:textColor="#FBFBFB"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
