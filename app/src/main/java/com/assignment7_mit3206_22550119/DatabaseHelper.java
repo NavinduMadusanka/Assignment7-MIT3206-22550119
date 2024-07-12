@@ -56,7 +56,6 @@ public class DatabaseHelper extends SQLiteOpenHelper{
     public DatabaseHelper (@Nullable Context context){
         super (context, DATABASE_NAME,null,1);
         Log.e("first","OpenDatabase");
-
     }
 
     @Override
@@ -81,7 +80,6 @@ public class DatabaseHelper extends SQLiteOpenHelper{
                 + TABLE_NAME4
                 + "(AccessNo INTEGER PRIMARY KEY AUTOINCREMENT,  BranchID VARCHAR(50), CardNo VARCHAR(50), " +
                 "DateOut VARCHAR(50), DateDue VARCHAR(50), DateReturned VARCHAR(50))");
-
     }
 
     @Override
