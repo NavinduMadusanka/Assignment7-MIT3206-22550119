@@ -12,8 +12,8 @@
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="40dp"
         android:text="Book Lending"
         android:textColor="@color/ic_launcher_background"
         android:textSize="30sp"
@@ -167,15 +167,15 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/btnDeleteLend"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.531"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtDateReturn"
-        app:layout_constraintVertical_bias="0.726" />
+        app:layout_constraintVertical_bias="0.633" />
 
     <Button
         android:id="@+id/btnDeleteLend"
-        android:layout_width="141dp"
-        android:layout_height="50dp"
+        android:layout_width="142dp"
+        android:layout_height="46dp"
         android:layout_marginBottom="28dp"
         android:background="@color/colorPrimaryDark"
         android:text="Clear"
@@ -183,23 +183,24 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/btnback6"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtDateReturn"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.922" />
 
     <Button
         android:id="@+id/btnback6"
-        android:layout_width="143dp"
-        android:layout_height="42dp"
+        android:layout_width="142dp"
+        android:layout_height="46dp"
         android:background="@color/colorPrimaryDark"
         android:text="Back"
         android:textColor="@android:color/white"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtDateReturn"
-        app:layout_constraintVertical_bias="0.879" />
+        app:layout_constraintVertical_bias="0.881" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

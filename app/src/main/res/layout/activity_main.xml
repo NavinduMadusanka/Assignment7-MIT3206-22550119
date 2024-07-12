@@ -40,28 +40,30 @@
         android:textSize="40sp"
         android:textStyle="bold"
         app:fontFamily="serif"
-        app:layout_constraintBottom_toTopOf="@+id/btnregister"
+        app:layout_constraintBottom_toTopOf="@+id/btnadminlogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0" />
 
     <Button
-        android:id="@+id/btnregister"
-        android:layout_width="139dp"
+        android:id="@+id/btnmemlogin"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="140dp"
         android:layout_height="40dp"
         android:background="@color/colorPrimaryDark"
         android:backgroundTintMode="src_over"
-        android:text="Signup"
+        android:text="Login"
+        android:textAllCaps="false"
         android:textColor="@android:color/white"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/btnmemlogin"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.973" />
+        app:layout_constraintVertical_bias="0.725" />
 
     <Button
         android:id="@+id/btnadminlogin"
@@ -71,30 +73,30 @@
         android:background="@color/colorPrimaryDark"
         android:backgroundTintMode="src_over"
         android:text="Admin Login"
-        android:textColor="@android:color/white"
         android:textAllCaps="false"
+        android:textColor="@android:color/white"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnregister"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.913" />
+        app:layout_constraintVertical_bias="0.897" />
 
     <Button
-        android:id="@+id/btnmemlogin"
-        style="@style/Widget.AppCompat.Button"
-        android:layout_width="139dp"
-        android:layout_height="38dp"
+        android:id="@+id/btnregister"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
         android:background="@color/colorPrimaryDark"
         android:backgroundTintMode="src_over"
-        android:text="Login"
+        android:text="Signup"
         android:textColor="@android:color/white"
-        android:textAllCaps="false"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnadminlogin"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.832" />
+        app:layout_constraintVertical_bias="0.897" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

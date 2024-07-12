@@ -7,12 +7,13 @@
     android:background="@drawable/library1"
     tools:context=".AdminMenu">
 
+
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="44dp"
         android:text="Admin Menu"
         android:textColor="@color/ic_launcher_background"
         android:textSize="30sp"
@@ -20,7 +21,6 @@
         app:fontFamily="monospace"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <Button
         android:id="@+id/btnaddingB"
@@ -33,10 +33,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/btnmanagepub"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.493" />
+        app:layout_constraintVertical_bias="0.465" />
 
     <Button
         android:id="@+id/btnmanagepub"
@@ -49,10 +49,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/btnbranch"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.479" />
+        app:layout_constraintVertical_bias="0.505" />
 
     <Button
         android:id="@+id/btnbranch"
@@ -65,10 +65,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/btnlending"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.544" />
+        app:layout_constraintVertical_bias="0.606" />
 
     <Button
         android:id="@+id/btnlending"
@@ -80,17 +80,17 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.643" />
+        app:layout_constraintVertical_bias="0.623" />
 
     <Button
         android:id="@+id/btnlogout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="250dp"
-        android:layout_marginTop="632dp"
+        android:layout_marginStart="228dp"
+        android:layout_marginTop="576dp"
         android:background="@color/colorPrimary"
         android:text="Logout"
         android:textColor="@android:color/white"
