@@ -60,7 +60,6 @@ public class ManagePublisher extends AppCompatActivity {
                     String Address = editText2.getText().toString();
                     String Phone = editText3.getText().toString();
 
-
                     dbManager.insert("insert into Publisher values('" + Name + "','" + Address + "'," +
                             "'" + Phone + "')");
                     Toast.makeText(ManagePublisher.this, "Successfully Inserted", Toast.LENGTH_SHORT).show();
