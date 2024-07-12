@@ -29,7 +29,6 @@ public class DatabaseHelper extends SQLiteOpenHelper{
     public static final String coloum4="BookAuthor";
     public static final String coloum5="Branch";
 
-
     public static final String TABLE_NAME2="Publisher";
     public static final String COL1= "Name";
     public static final String COL2="Address";
