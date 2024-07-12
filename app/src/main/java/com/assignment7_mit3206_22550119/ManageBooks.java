@@ -65,7 +65,6 @@ public class ManageBooks extends AppCompatActivity {
                     String BookAuthor = editText4.getText().toString();
                     String Branch = editText5.getText().toString();
 
-
                     dbManager.insert("insert into Book values('" + BookID + "','" + BookName + "'," +
                             "'" + BookPublisher + "','" + BookAuthor + "','" + Branch + "')");
                     Toast.makeText(getApplicationContext(), "Successfully Inserted", Toast.LENGTH_SHORT).show();
