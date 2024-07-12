@@ -72,7 +72,6 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         //+ TABLE_NAME1
         //+ "(BookID VARCHAR(50) PRIMARY KEY,  BookName VARCHAR(50), BookPublisher VARCHAR(50), " +
         //"BookAuthor VARCHAR(50))");
-
         db.execSQL(CREATE_TABLE2);
         db.execSQL(CREATE_TABLE3);
 
@@ -102,11 +101,10 @@ public class DatabaseHelper extends SQLiteOpenHelper{
     public Cursor viewData(){
         SQLiteDatabase db = this.getReadableDatabase();
         String query = "Select * from "+TABLE_NAME1;
-
         Cursor cursor = db.rawQuery(query, null);
-
         return cursor;
     }
+
     //search from query
     public Cursor searchUsers1(String text){
         SQLiteDatabase db = this.getReadableDatabase();
