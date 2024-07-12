@@ -63,7 +63,6 @@ public class Signup extends AppCompatActivity {
                     String UserName = eT6.getText().toString();
                     String Password = eT7.getText().toString();
 
-
                     dbManager.open();
 
                     dbManager.insert("insert into Member values(?,'" + FirstName + "','" + LastName + "'," +
