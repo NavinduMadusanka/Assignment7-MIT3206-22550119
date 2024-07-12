@@ -60,7 +60,6 @@ public class ManageBranch extends AppCompatActivity {
                     String BranchName = editText2.getText().toString();
                     String BranchAddress = editText3.getText().toString();
 
-
                     dbManager.insert("insert into Branch values('" + BranchID + "','" + BranchName + "'," +
                             "'" + BranchAddress + "')");
                     Toast.makeText(getApplicationContext(), "Successfully Inserted", Toast.LENGTH_SHORT).show();
