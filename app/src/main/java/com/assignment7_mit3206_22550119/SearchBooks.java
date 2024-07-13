@@ -2,13 +2,16 @@ package com.assignment7_mit3206_22550119;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +22,7 @@ import java.util.List;
 public class SearchBooks extends AppCompatActivity {
 
     private ListView listView;
+    private TextView textView;
     private EditText searchEditText;
     private Button backButton;
     private Button searchButton;
@@ -32,6 +36,8 @@ public class SearchBooks extends AppCompatActivity {
         setContentView(R.layout.activity_search_books);
 
         listView = findViewById(R.id.listView);
+        textView = findViewById(R.id.textView);
+        textView.setTextColor(Color.BLACK);
         searchEditText = findViewById(R.id.searchEditText);
         backButton = findViewById(R.id.backButton);
         searchButton = findViewById(R.id.searchButton);
@@ -48,7 +54,7 @@ public class SearchBooks extends AppCompatActivity {
             } while (cursor.moveToNext());
         }
         cursor.close();
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, bookList);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.list_item, R.id.list_item_text, bookList);
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -61,9 +67,9 @@ public class SearchBooks extends AppCompatActivity {
 
         searchEditText.setOnKeyListener(new View.OnKeyListener() {
             @Override
-            public boolean onKey(View v, int keyCode, android.view.KeyEvent event) {
-                if ((event.getAction() == android.view.KeyEvent.ACTION_DOWN) &&
-                        (keyCode == android.view.KeyEvent.KEYCODE_ENTER)) {
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
+                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
                     searchBooks();
                     return true;
                 }
